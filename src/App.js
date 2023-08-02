@@ -1,9 +1,10 @@
 import "./App.css"
+import InputShortener from "./InputShortener"
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <InputShortener />
     </div>
   )
 }
