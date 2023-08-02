@@ -1,6 +1,6 @@
 import React from "react"
 
-function backgroundAnimate() {
+function BackgroundAnimate() {
   return (
     <ul className="background">
       <li></li>
@@ -20,4 +20,4 @@ function backgroundAnimate() {
   )
 }
 
-export default backgroundAnimate
+export default BackgroundAnimate
