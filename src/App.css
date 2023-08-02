@@ -35,3 +35,13 @@
 .inputContainer input::placeholder {
   font-size: 0.9rem;
 }
+
+.inputContainer button {
+  padding: 0 1rem;
+  height: 3rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
