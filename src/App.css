@@ -10,3 +10,7 @@
   font-family: "Playfair Display", serif;
   font-size: 3.5rem;
 }
+
+.inputContainer h1 span {
+  color: var(--primary-color);
+}
