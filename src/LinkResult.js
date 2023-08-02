@@ -1,10 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard"
 
 function LinkResult() {
   const [shortenLink, setShortenLink] = useState("Hello World")
   const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopied(false)
+    }, 1000)
+  }, [copied])
 
   return (
     <div className="result">
