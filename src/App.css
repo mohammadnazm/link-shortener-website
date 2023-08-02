@@ -31,3 +31,7 @@
   border-bottom-left-radius: 3px;
   background: red;
 }
+
+.inputContainer input::placeholder {
+  font-size: 0.9rem;
+}
