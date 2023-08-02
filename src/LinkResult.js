@@ -10,7 +10,7 @@ function LinkResult() {
     <div className="result">
       <p>{shortenLink}</p>
       <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
-        <button>Copy to clipboard</button>
+        <button className={copied ? "copied" : ""}>Copy to clipboard</button>
       </CopyToClipboard>
     </div>
   )
