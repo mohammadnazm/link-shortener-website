@@ -9,6 +9,7 @@ function LinkResult({ inputValue }) {
   console.log(shortenLink)
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -18,7 +19,9 @@ function LinkResult({ inputValue }) {
       )
       setShortenLink(res.data)
     } catch (err) {
+      setError(err)
     } finally {
+      setLoading(false)
     }
   }
 
@@ -34,13 +37,27 @@ function LinkResult({ inputValue }) {
     }, 1000)
   }, [copied])
 
+  if (loading) {
+    return <p className="noData">Loading...</p>
+  }
+
+  if (error) {
+    return <p className="noData">Something went wrong</p>
+  }
+
   return (
-    <div className="result">
-      {/* <p>{shortenLink}</p> */}
-      <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
-        <button className={copied ? "copied" : ""}>Copy to clipboard</button>
-      </CopyToClipboard>
-    </div>
+    <>
+      {shortenLink && (
+        <div className="result">
+          <p>{shortenLink}</p>
+          <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
+            <button className={copied ? "copied" : ""}>
+              Copy to clipboard
+            </button>
+          </CopyToClipboard>
+        </div>
+      )}
+    </>
   )
 }
 
