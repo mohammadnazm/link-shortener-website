@@ -4,7 +4,7 @@ import { useState } from "react"
 function LinkResult() {
   const [shortenLink, setShortenLink] = useState("Hello World")
   return (
-    <div>
+    <div className="result">
       <p>{shortenLink}</p>
       <button>Copy to clipboard</button>
     </div>
