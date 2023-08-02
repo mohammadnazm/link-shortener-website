@@ -63,6 +63,14 @@
   margin-right: 1rem;
 }
 
+.result button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  background: var(--primary-color);
+  border: none;
+}
+
 /* background animate */
 @keyframes animate {
   0% {
