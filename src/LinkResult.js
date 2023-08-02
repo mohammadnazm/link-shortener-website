@@ -6,6 +6,7 @@ function LinkResult() {
   return (
     <div>
       <p>{shortenLink}</p>
+      <button>Copy to clipboard</button>
     </div>
   )
 }
