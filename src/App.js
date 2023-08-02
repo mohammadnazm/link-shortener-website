@@ -3,7 +3,7 @@ import InputShortener from "./InputShortener"
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <InputShortener />
     </div>
   )
