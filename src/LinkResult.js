@@ -1,12 +1,15 @@
 import React from "react"
 import { useState } from "react"
+import CopyToClipboard from "react-copy-to-clipboard"
 
 function LinkResult() {
   const [shortenLink, setShortenLink] = useState("Hello World")
   return (
     <div className="result">
       <p>{shortenLink}</p>
-      <button>Copy to clipboard</button>
+      <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
+        <button>Copy to clipboard</button>
+      </CopyToClipboard>
     </div>
   )
 }
