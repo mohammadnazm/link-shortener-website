@@ -7,7 +7,7 @@ const InputShortener = () => {
         URL <span>Shortener</span>
       </h1>
       <div>
-        <input type="text" placeholder="Paste a link" />
+        <input type="text" placeholder="Paste a link to shorten it" />
       </div>
     </div>
   )
