@@ -10,7 +10,7 @@ function App() {
     <div className="container">
       <InputShortener setInputValue={setInputValue} />
       <BackgroundAnimate />
-      <LinkResult />
+      <LinkResult inputValue={inputValue} />
     </div>
   )
 }
