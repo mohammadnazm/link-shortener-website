@@ -4,6 +4,8 @@ import CopyToClipboard from "react-copy-to-clipboard"
 
 function LinkResult() {
   const [shortenLink, setShortenLink] = useState("Hello World")
+  const [copied, setCopied] = useState(false)
+
   return (
     <div className="result">
       <p>{shortenLink}</p>
