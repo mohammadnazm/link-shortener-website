@@ -44,4 +44,8 @@
   font-weight: bold;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
 }
