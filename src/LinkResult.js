@@ -1,12 +1,9 @@
 import axios from "axios"
-import React, { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CopyToClipboard from "react-copy-to-clipboard"
 
-function LinkResult({ inputValue }) {
-  console.log(inputValue)
+const LinkResult = ({ inputValue }) => {
   const [shortenLink, setShortenLink] = useState("")
-  console.log(shortenLink)
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -17,7 +14,7 @@ function LinkResult({ inputValue }) {
       const res = await axios(
         `https://api.shrtco.de/v2/shorten?url=${inputValue}`
       )
-      setShortenLink(res.data)
+      setShortenLink(res.data.result.full_short_link)
     } catch (err) {
       setError(err)
     } finally {
@@ -35,14 +32,15 @@ function LinkResult({ inputValue }) {
     const timer = setTimeout(() => {
       setCopied(false)
     }, 1000)
+
+    return () => clearTimeout(timer)
   }, [copied])
 
   if (loading) {
     return <p className="noData">Loading...</p>
   }
-
   if (error) {
-    return <p className="noData">Something went wrong</p>
+    return <p className="noData">Something wne t wrong :(</p>
   }
 
   return (
@@ -52,7 +50,7 @@ function LinkResult({ inputValue }) {
           <p>{shortenLink}</p>
           <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
             <button className={copied ? "copied" : ""}>
-              Copy to clipboard
+              Copy to Clipboard
             </button>
           </CopyToClipboard>
         </div>
